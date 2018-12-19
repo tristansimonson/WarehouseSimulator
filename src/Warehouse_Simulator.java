@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 // main class
 public class Warehouse_Simulator {
 	
@@ -12,10 +14,20 @@ public class Warehouse_Simulator {
 		
 		Package package1 = new Package();
 		package1 = package1.newPackage(12.0, 12.0, 12.0, 10000, 1, Jim, John);
-		package1.fillPackage(pencil);
+		package1.fillPackage(pencil);		
+		Package package2 = new Package();
+		package2 = package2.newPackage(12.0, 12.0, 12.0, 10009, 3, Jim, John);
+		package2.fillPackage(pencil);
+		Package package3 = new Package();
+		package3 = package3.newPackage(12.0, 12.0, 12.0, 10008, 2, Jim, John);
+		package3.fillPackage(pencil);
 		
 		Queue priorityQueue = new Queue();
-		priorityQueue.addToQueue(package1);
+		ArrayList<Package> myList = new ArrayList<Package>();
+		myList.add(package1);
+		myList.add(package2);
+		myList.add(package3);
+		priorityQueue.addToQueue(myList);
 		priorityQueue.processQueue();
 	}
 }

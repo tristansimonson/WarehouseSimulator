@@ -26,6 +26,13 @@ public class Queue {
 		queue = tempQueue;
 	}
 	
+	// add items to the queue
+	public void addToQueue(ArrayList<Package> p) {
+		for(int i = 0; i < queue.size(); i++) {
+			addToQueue(p.get(i));
+		}
+	}
+	
 	// remove item from queue
 	public void removeFromQueue(int id) {
 		for(int i = 0; i < queue.size(); i++) {
