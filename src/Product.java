@@ -4,13 +4,13 @@ public class Product {
     String description;
     String manufacturer;
     String serial_number;
-    int weight;
-    int height;
-    int width;
-    int depth;
+    double weight;
+    double height;
+    double width;
+    double depth;
     
     // create product
-    public void newProduct(String n, String des, String m, String s, int we, int h, int wi, int d) {
+    public Product newProduct(String n, String des, String m, String s, double we, double h, double wi, double d) {
     	this.name = n;
     	this.description = des;
     	this.manufacturer = m;
@@ -19,5 +19,7 @@ public class Product {
     	this.height = h;
     	this.width = wi;
     	this.depth = d;
+    	
+    	return this;
     }
 }
