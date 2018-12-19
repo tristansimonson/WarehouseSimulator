@@ -40,8 +40,35 @@ public class Queue {
 		System.out.println("Processing queue...");
 		for(int i = 0; i < queue.size(); i++) {
 			System.out.println("Processing package: #" + queue.get(i).id);
+			packageSummary(queue.get(i));
 		}
 		queue = new ArrayList<Package>();
 		System.out.println("Processing done...");
+	}
+	
+	// package processing summary
+	public static void packageSummary(Package p) {
+		System.out.println("----------PACKAGE----------");
+		System.out.println("Package #" + p.id);
+		System.out.println("Dimensions: " + p.height + " x " + p.width + " x " + p.depth);
+		System.out.println("Weight: " + p.weight + "lbs");
+		System.out.println("Sender: " + p.sender.last_name + ", " + p.sender.first_name);
+		System.out.println("Recipient: " + p.receiver.last_name + ", " + p.receiver.first_name);
+		System.out.println("----------CONTENT----------");
+		for(int i = 0; i < p.contents.size(); i++) {
+			productSummary(p.contents.get(i));
+		}
+		System.out.println("----------CONTENT----------");
+		System.out.println("----------PACKAGE----------");
+	}
+	
+	// product processing summary
+	public static void productSummary(Product p) {
+		System.out.println("Product: " + p.name);
+		System.out.println("Serial Number: " + p.serial_number);
+		System.out.println("Description: " + p.description);
+		System.out.println("Manufacturer: " + p.manufacturer);
+		System.out.println("Dimensions: " + p.height + " x " + p.width + " x " + p.depth);
+		System.out.println("Weight: " + p.weight + "lbs");
 	}
 }

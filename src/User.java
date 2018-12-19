@@ -19,10 +19,23 @@ public class User {
     
     // remove a user from list
     public void removeUser(int id) {
+    	User user = getUserById(id);
+    	users.remove(user);
+    }
+    
+    // return user
+    public User getUserById(int id) {
     	for(int i = 0; i < users.size(); i++) {
     		if(users.get(i).id == id) {
-    			users.remove(i);
+    			return users.get(i);
     		}
     	}
+    	return null;
+    }
+    
+    // edit user address
+    public void changeAddress(int id, String address) {
+    	User user = getUserById(id);
+    	user.address = address;
     }
 }
