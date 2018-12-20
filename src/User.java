@@ -5,11 +5,11 @@ public class User {
     int id;
     String first_name;
     String last_name;
-    String address;
+    Address address;
     ArrayList<User> users = new ArrayList<User>();
  
     // create new user and add them to user list
-    public User newUser(int id, String first_name, String last_name, String address) {
+    public User newUser(int id, String first_name, String last_name, Address address) {
 	    this.id = id;
 	    this.first_name = first_name;
 	    this.last_name = last_name;
@@ -36,7 +36,7 @@ public class User {
     }
     
     // edit user address
-    public void changeAddress(int id, String address) {
+    public void changeAddress(int id, Address address) {
     	User user = getUserById(id);
     	user.address = address;
     }

@@ -12,6 +12,8 @@ public class Package {
 	int tracking;
 	Carrier carrier;
 	Status status;
+	Address return_add;
+	Address receiving_add;
 	User receiver;
 	User sender;
 	ArrayList<Integer> tracking_nums = new ArrayList<Integer>();
@@ -29,6 +31,8 @@ public class Package {
 		this.carrier = c;
 		this.receiver = r;
 		this.sender = s;
+		this.return_add = sender.address;
+		this.receiving_add = receiver.address;
 		this.contents = new ArrayList<Product>();
 		
 		return this;

@@ -7,10 +7,14 @@ public class Warehouse_Simulator {
 		Product pencil = new Product();
 		pencil = pencil.newProduct("Pencil", "Lead and wood", "Ticondoroga", "8675309", 0.1, 8.0, 0.25, 0.25);
 		
+		Address add1 = new Address();
+		add1 = add1.newAddress("123 Nonyabusiness Rd", "", "Ashland", "WI", "12345");
 		User Jim = new User();
-		Jim = Jim.newUser(101, "Jim", "Halpert", "360 Nonyabusiness Rd, Ashland, WI 12345");
+		Jim = Jim.newUser(101, "Jim", "Halpert", add1);
+		Address add2 = new Address();
+		add2 = add2.newAddress("420 Lebowski Dr", "Apt 4", "Seattle", "WA", "54321");
 		User John = new User();
-		John = John.newUser(102, "John", "Appleseed", "420 Lebowski Dr, Seattle, WA 54321");
+		John = John.newUser(102, "John", "Appleseed", add2);
 		
 		Package package1 = new Package();
 		package1 = package1.newPackage(12.0, 12.0, 12.0, 10000, 1, Carrier.DHL, Jim, John);
