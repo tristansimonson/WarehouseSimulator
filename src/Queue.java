@@ -7,26 +7,16 @@ public class Queue {
 	// add item to the queue
 	public void addToQueue(Package p) {
 		queue.add(p);
-		// temp list to hold values while sorting
-		ArrayList<Package> tempQueue = new ArrayList<Package>();
-		Package min;
-		Package pos;
-		int location;
-		// order queue by priority
-		for(int i = 0; i < queue.size(); i++) {
-			min = queue.get(i);
-			location = i;
-			for(int j = 0; j < queue.size(); j++) {
-				pos = queue.get(j);
-			    if(pos.priority > min.priority && pos.id != min.id && pos.status != Status.PROCESSING) {
-				    location = j;
-			    	min = queue.get(j);
-			    }
-			}
-			queue.get(location).status = Status.PROCESSING;
-			tempQueue.add(queue.get(location));
-		}
-		queue = tempQueue;
+		Package temp;
+        for (int i = 0; i < queue.size() - 1; i++) {
+            for (int j = i + 1; j < queue.size(); j++) {
+                if (queue.get(i).priority > queue.get(j).priority) {
+                    temp = queue.get(j);
+                    queue.set(j, queue.get(i));
+                    queue.set(i, temp);
+                }
+            }
+        }
 	}
 	
 	// add items to the queue
