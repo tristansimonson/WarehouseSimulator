@@ -39,9 +39,12 @@ public class Queue {
 	public void processQueue() {
 		System.out.println("Processing queue...");
 		for(int i = 0; i < queue.size(); i++) {
-			System.out.println("Processing package: #" + queue.get(i).id);
+			if(queue.size() > 1) {
+				System.out.println("\n");
+			}
 			packageSummary(queue.get(i));
 		}
+		System.out.println("\n");
 		queue = new ArrayList<Package>();
 		System.out.println("Processing done...");
 	}
@@ -60,8 +63,8 @@ public class Queue {
 		for(int i = 0; i < p.contents.size(); i++) {
 			productSummary(p.contents.get(i));
 		}
-		System.out.println("----------CONTENT----------");
-		System.out.println("----------PACKAGE----------");
+		System.out.println("---------------------------");
+		System.out.println("---------------------------");
 	}
 	
 	// product processing summary
