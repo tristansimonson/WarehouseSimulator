@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 // class for package details
 public class Package {
@@ -8,24 +9,47 @@ public class Package {
 	double depth;
 	int id;
 	int priority;
+	int tracking;
+	Carrier carrier;
 	Status status;
 	User receiver;
 	User sender;
+	ArrayList<Integer> tracking_nums = new ArrayList<Integer>();
 	ArrayList<Product> contents = new ArrayList<Product>();
 
 	// create a package with specified details
-	public Package newPackage(double w, double h, double d, int id, int p, User r, User s) {
+	public Package newPackage(double w, double h, double d, int id, int p, Carrier c, User r, User s) {
 		this.width = w;
 		this.height = h;
 		this.depth = d;
 		this.id = id;
+		this.tracking = generateTracking();
 		this.status = Status.READY;
 		this.priority = p;
+		this.carrier = c;
 		this.receiver = r;
 		this.sender = s;
 		this.contents = new ArrayList<Product>();
 		
 		return this;
+	}
+	
+	// generates ten digit tracking number and makes sure it is not a duplicate
+	public int generateTracking() {
+		boolean redo = true;
+		int num = ThreadLocalRandom.current().nextInt(1000000000, 1099999999);
+		// check if duplicate tracking numbers
+		while(redo) {
+			redo = false;
+			for(int i = 0; i < tracking_nums.size(); i++) {
+				if(tracking_nums.get(i) == num) {
+					num = ThreadLocalRandom.current().nextInt(1000000000, 1099999999);
+					redo = true;
+				}
+			}
+		}
+		tracking_nums.add(num);
+		return num;
 	}
 	
 	// adds product to package

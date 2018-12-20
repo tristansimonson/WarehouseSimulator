@@ -50,6 +50,8 @@ public class Queue {
 	public static void packageSummary(Package p) {
 		System.out.println("----------PACKAGE----------");
 		System.out.println("Package #" + p.id);
+		System.out.println("Tracking #" + p.tracking);
+		System.out.println("Provider: " + p.carrier);
 		System.out.println("Dimensions: " + p.height + " x " + p.width + " x " + p.depth);
 		System.out.println("Weight: " + p.weight + "lbs");
 		System.out.println("Sender: " + p.sender.last_name + ", " + p.sender.first_name);

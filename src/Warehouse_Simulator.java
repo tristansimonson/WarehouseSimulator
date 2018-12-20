@@ -13,13 +13,13 @@ public class Warehouse_Simulator {
 		John = John.newUser(102, "John", "Appleseed", "420 Lebowski Dr, Seattle, WA 54321");
 		
 		Package package1 = new Package();
-		package1 = package1.newPackage(12.0, 12.0, 12.0, 10000, 1, Jim, John);
+		package1 = package1.newPackage(12.0, 12.0, 12.0, 10000, 1, Carrier.DHL, Jim, John);
 		package1.fillPackage(pencil);		
 		Package package2 = new Package();
-		package2 = package2.newPackage(12.0, 12.0, 12.0, 10002, 3, Jim, John);
+		package2 = package2.newPackage(12.0, 12.0, 12.0, 10002, 3, Carrier.FEDEX, Jim, John);
 		package2.fillPackage(pencil);
 		Package package3 = new Package();
-		package3 = package3.newPackage(12.0, 12.0, 12.0, 10001, 2, Jim, John);
+		package3 = package3.newPackage(12.0, 12.0, 12.0, 10001, 2, Carrier.USPS, Jim, John);
 		package3.fillPackage(pencil);
 		
 		Queue priorityQueue = new Queue();
