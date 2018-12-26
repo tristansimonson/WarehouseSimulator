@@ -16,6 +16,15 @@ public class Address {
 	}
 	
 	public String addressToString() {
-		return "to do";
+		String result = "";
+		String space = "         ";
+		result += this.street1;
+		if(this.street2 != "") {
+			result += "\n" + space + this.street2;
+		}
+		result += "\n" + space + this.city;
+		result += ", " + this.state;
+		result += " " + this.zip;
+		return result;
 	}
 }

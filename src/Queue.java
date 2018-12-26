@@ -55,7 +55,7 @@ public class Queue {
 		System.out.println("Package #" + p.id);
 		System.out.println("Tracking #" + p.tracking);
 		System.out.println("Provider: " + p.carrier);
-		p.return_add.addressToString();
+		System.out.println("Address: " + p.return_add.addressToString());
 		System.out.println("Dimensions: " + p.height + " x " + p.width + " x " + p.depth);
 		System.out.println("Weight: " + p.weight + "lbs");
 		System.out.println("Sender: " + p.sender.last_name + ", " + p.sender.first_name);
